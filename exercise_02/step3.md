@@ -7,7 +7,7 @@ Now we will extract the datasets that will be used for the SQL exercises:
 
 ``cd /tmp``{{execute}}
 
-``unzip databases.zip``{{execute}}
+``unzip datasets.zip``{{execute}}
 
 After the files have been extracted, we define a schema
 
