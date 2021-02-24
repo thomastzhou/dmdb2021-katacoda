@@ -29,7 +29,7 @@
             "host01": [
                 {
                     "file": "datasets.zip",
-                    "target": "~/"
+                    "target": "/tmp/"
                 }
             ]
         },
@@ -41,6 +41,6 @@
         "uilayout": "terminal"
     },
     "backend": {
-        "imageid": "kafka:2.4"
+        "imageid": "bash"
     }
 }
