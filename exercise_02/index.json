@@ -25,6 +25,14 @@
         "intro": {
             "text": "intro.md"
         },
+        "assets": {
+            "host01": [
+                {
+                    "file": "datasets.zip",
+                    "target": "~/"
+                }
+            ]
+        },
         "finish": {
             "text": "finish.md"
         }
