@@ -1,15 +1,12 @@
 #### Installing a DBMS
 
-We first install a DBMS in Ubuntu. Here we will install PostgreSQL 
-and use it as an example.
+We first install a DBMS in Ubuntu. Here we will install PostgreSQL 13 and use it as an example.
 
 ##### Setup
 
-Like all software, to install a DBMS, we need to set-up 
-our environments and dependencies. This process is
-particularly easy for installing PostgreSQL
-in Ubuntu. We first step-up the `apt-get`
-environment as follows:
+Like all software, to install a DBMS, we need to set-up our environments and dependencies. 
+This process is particularly easy for installing PostgreSQL in Ubuntu.
+We first set-up the `apt-get` environment as follows:
 
 `apt-get install wget ca-certificates`{{execute}}
 
@@ -23,25 +20,24 @@ We can now install `PostgreSQL`:
 
 ``apt-get install -y postgresql postgresql-contrib``{{execute}}
 
-##### Start DBMS
+##### Starting the DBMS
 
-Now we have `PostgreSQL` installed, we can start it 
-by using the following command.
+Now we have `PostgreSQL` installed, we can start it by using the following command.
 
 ``pg_ctlcluster 13 main start``{{execute}}
 
-##### Connect 
+##### Connecting to the DBMS
 
-Now `PostgreSQL` is running as a service in the background and we can
-connect to it using its default client `psql`. By default,
-`PostgreSQL` will create a user `postgres` and it is
-easier to connect to it as this user.
+Now `PostgreSQL` is running as a service in the background and we can 
+connect to it using its default client `psql`. 
+By default, `PostgreSQL` will create a user `postgres` 
+and it is easier to connect to it as this user.
 
-We first swtich the user to `postgres`
+We first swtich the user to `postgres`:
 
 ``su - postgres``{{execute}}
 
-Runinng `psql` will connect us with the DBMS engine.
+Running `psql` will connect us with the DBMS engine.
 
 ``psql``{{execute}}
 
@@ -49,5 +45,3 @@ We can now type some commands. For example, let's change
 the password for our default user `postgres`.
 
 ``ALTER USER postgres PASSWORD 'myPassword';``{{execute}}
-
-We can quit the `psql` program with
