@@ -7,12 +7,12 @@
         "steps": [
             {
                 "title": "Step 1",
-                "text": "step1.md"
+                "text": "step1.md",
+                "code": "setup.sh"
             }
         ],
         "intro": {
-            "text": "intro.md",
-            "code": "setup.sh"
+            "text": "intro.md"
         },
         "assets": {
             "host01": [
