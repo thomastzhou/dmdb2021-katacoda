@@ -4,10 +4,13 @@ apt-get install wget ca-certificates
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 apt-get update
-apt-get install -y postgresql postgresql-contrib
+apt-get install -y postgresql < "/dev/null"
+apt-get install -y postgresql-contrib < "dev/null"
 pg_ctlcluster 13 main start
 sudo -i -u postgres bash
 psql -U postgres -c "ALTER USER postgres PASSWORD 'myPassword';"
+
+
 cd /tmp
 unzip datasets.zip
 psql -U postgres employee < /tmp/employee/schema.sql
