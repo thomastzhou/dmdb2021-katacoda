@@ -9,7 +9,9 @@ apt-get install -y postgresql-contrib < "dev/null"
 pg_ctlcluster 13 main start
 sudo -i -u postgres bash
 psql -U postgres -c "ALTER USER postgres PASSWORD 'myPassword';"
-
+psql -U postgres -c "CREATE DATABASE employee;"
+psql -U postgres -c "CREATE DATABASE tpch;"
+psql -U postgres -c "CREATE DATABASE zvv;"
 
 cd /tmp
 unzip datasets.zip
