@@ -7,7 +7,8 @@
         "steps": [
             {
                 "title": "Step 1",
-                "text": "step1.md"
+                "text": "step1.md",
+                "code": "foreground.sh"
             },
             {
                 "title": "Step 2",
@@ -30,6 +31,16 @@
                 {
                     "file": "datasets.zip",
                     "target": "/tmp/"
+                },
+                {
+                    "file": "pgcli.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
+                },
+                {
+                    "file": "psql.sh",
+                    "target": "/usr/local/bin/",
+                    "chmod": "+x"
                 }
             ]
         },
@@ -41,6 +52,6 @@
         "uilayout": "terminal"
     },
     "backend": {
-        "imageid": "kafka:2.4"
+        "imageid": "ubuntu:2004"
     }
 }
