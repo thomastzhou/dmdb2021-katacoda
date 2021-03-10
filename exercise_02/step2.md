@@ -2,7 +2,7 @@
 
 Let's run a script which creates and populates the necessary databases (on the Postgres server running in our docker image).
 
-`./populate.sh`{{execute}}
+`populate.sh`{{execute}}
 
 Then, connect to the database using either client:
 
