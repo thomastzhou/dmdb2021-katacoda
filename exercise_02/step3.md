@@ -1,30 +1,29 @@
-#### Populating the Databases
-Let's first *quit* the `psql` program with:
+#### Querying
+The questions in the exercises each refer to one of the three datasets we have created databases for.
 
-``\q``{{execute}}
+To run queries on the datasets, we *connect* to them as follows:
 
-Now we will extract the datasets that will be used for the SQL exercises:
+##### Employees
 
-``cd /tmp``{{execute}}
+``\c employee``{{execute}}
 
-``unzip datasets.zip``{{execute}}
+We can now run queries on the connected dataset. For example, to return employee's first names:
 
-After the files have been extracted, we define a schema
+``
+SELECT e.first_name
+FROM employees e
+LIMIT 5;
+``{{execute}}
 
-``psql employee < /tmp/employee/schema.sql``{{execute}}
+##### TPC-H and ZVV
 
-and load the data.
+We can use the same command to connect to the TPC-H dataset:
 
-``psql -d employee --user postgres -f /tmp/employee/inserts.sql``{{execute}}
+``\c tpch``{{execute}}
 
-We now repeat this procedure for the other two exercise datasets.
+and the ZVV dataset:
 
-##### TPC-H
-``psql tpch < /tmp/tpch/schema.sql``{{execute}}
+``\c zvv``{{execute}}
 
-``psql -d tpch --user postgres -f /tmp/tpch/inserts.sql``{{execute}}
-
-##### ZVV
-``psql zvv < /tmp/zvv/schema.sql``{{execute}}
-
-``psql -d zvv --user postgres -f /tmp/zvv/inserts.sql``{{execute}}
+Using the command line interface, we can now run and test different SQL queries 
+that are discussed in the exercise.

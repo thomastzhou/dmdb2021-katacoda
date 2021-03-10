@@ -1,19 +1,12 @@
-#### Creating the Databases
+#### Create and Populate Databases
+
+Let's first wait for the script to create and populate all of our databases. Then, connect to the database using either client:
+
+`psql.sh -U postgres`{{execute}}
+`pgcli.sh -h postgres-server -u postgres`{{execute}}
 
 Now we are connected to our DBMS, we can use the following command to *list* all existing database instances:
 
 ``\l``{{execute}}
 
-We see that there are three database instances already there. We now create the three databases that will be used during the exercise.
-
-``CREATE DATABASE employee;``{{execute}}
-
-``CREATE DATABASE zvv;``{{execute}}
-
-``CREATE DATABASE tpch;``{{execute}}
-
-Now if we list the database instances again:
-
-``\l``{{execute}}
-
-we can observe the three new database instances.
+In addition to three default database instances, we should be able to see the three database instances that will be used for the exercise: **employee**, **tpch**, and **zvv**. 
