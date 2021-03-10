@@ -2,4 +2,4 @@
 
 docker run --rm -it \
     --link postgres-server \
-    thomastzhou/pgcli "$@"
+    ingomuellernet/pgcli "$@"

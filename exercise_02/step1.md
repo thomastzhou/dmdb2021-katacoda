@@ -1,47 +1,30 @@
 #### Installing a DBMS
 
-We first install a DBMS in Ubuntu. Here we will install PostgreSQL 13 and use it as an example.
+The tutorial should install and start a Postgres server automatically (inside
+docker). Once the installation completes, we have two ways to connect to the
+server. The first is the official client:
 
-##### Setup
+`psql.sh -U postgres`{{execute}}
 
-Like all software, to install a DBMS, we need to set-up our environments and dependencies. 
-This process is particularly easy for installing PostgreSQL in Ubuntu.
-We first set-up the `apt-get` environment as follows:
+Let's just confirm that we are indeed connected:
 
-`apt-get install wget ca-certificates`{{execute}}
+`\c`{{execute}}
 
-`wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -`{{execute}}
+Then quit the client again:
 
-``sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'``{{execute}}
+`\q`{{execute}}
 
-``apt-get update``{{execute}}
+The second is an inofficial client with a few nice features (inside docker as
+well):
 
-We can now install `PostgreSQL`:
+`pgcli.sh -h postgres-server -u postgres`{{execute}}
 
-``apt-get install -y postgresql postgresql-contrib``{{execute}}
+We can now start with creating a database and connect to it:
 
-##### Starting the DBMS
+`CREATE DATABASE testdatabase;`{{execute}}
 
-Now we have `PostgreSQL` installed, we can start it by using the following command.
+`\c testdatabase`{{execute}}
 
-``pg_ctlcluster 13 main start``{{execute}}
+`\q`{{execute}}
 
-##### Connecting to the DBMS
-
-Now `PostgreSQL` is running as a service in the background and we can 
-connect to it using its default client `psql`. 
-By default, `PostgreSQL` will create a user `postgres` 
-and it is easier to connect to it as this user.
-
-We first swtich the user to `postgres`:
-
-``su - postgres``{{execute}}
-
-Running `psql` will connect us with the DBMS engine.
-
-``psql``{{execute}}
-
-We can now type some commands. For example, let's change
-the password for our default user `postgres`.
-
-``ALTER USER postgres PASSWORD 'myPassword';``{{execute}}
+Everything is set up, so let's get started!
