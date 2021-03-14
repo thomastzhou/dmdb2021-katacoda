@@ -7,7 +7,7 @@ if ! docker container inspect -f '{{.State.Status}}' $CONTAINER_NAME > /dev/null
 then
     docker run -d \
         -p 5432:5432 \
-        -v $PWD:/data \
+        -v "$PWD":/data \
         --name $CONTAINER_NAME \
         -e POSTGRES_HOST_AUTH_METHOD=trust \
         postgres:13.2-alpine
